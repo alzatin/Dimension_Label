@@ -39,7 +39,7 @@
     {
       "atomType": "Input",
       "x": 0.0264,
-      "y": 0.524390243902439,
+      "y": 0.16,
       "uniqueID": "id-9522",
       "name": "Starting_Point",
       "type": "point3d",
@@ -52,7 +52,7 @@
     {
       "atomType": "Input",
       "x": 0.0264,
-      "y": 0.6829268292682927,
+      "y": 0.256,
       "uniqueID": "id-9525",
       "name": "Ending_Point_",
       "type": "point3d",
@@ -98,7 +98,7 @@
     {
       "atomType": "Input",
       "x": 0.0264,
-      "y": 0.3719512195121951,
+      "y": 0.352,
       "uniqueID": "id-9536",
       "name": "Geometry",
       "type": "geometry"
@@ -145,8 +145,7 @@
       "ioValues": [
         {
           "name": "Font Size",
-          "ioValue": 10,
-          "currentEquation": "10"
+          "ioValue": 10
         },
         {
           "name": "Text",
