@@ -12,8 +12,8 @@
     {
       "name": "Ending_Point_",
       "ioValue": [
-        10,
-        10,
+        50,
+        50,
         0
       ]
     },
@@ -39,7 +39,7 @@
     {
       "atomType": "Input",
       "x": 0.0264,
-      "y": 0.16,
+      "y": 0.2713414634146341,
       "uniqueID": "id-9522",
       "name": "Starting_Point",
       "type": "point3d",
@@ -52,7 +52,7 @@
     {
       "atomType": "Input",
       "x": 0.0264,
-      "y": 0.256,
+      "y": 0.3871951219512195,
       "uniqueID": "id-9525",
       "name": "Ending_Point_",
       "type": "point3d",
@@ -64,8 +64,8 @@
     },
     {
       "atomType": "Label",
-      "x": 0.6111603188662533,
-      "y": 0.4024390243902439,
+      "x": 0.6508795669824087,
+      "y": 0.41158536585365857,
       "uniqueID": "id-9528",
       "ioValues": [
         {
@@ -79,8 +79,8 @@
         {
           "name": "endPosition",
           "ioValue": [
-            10,
-            10,
+            50,
+            50,
             0
           ]
         },
@@ -98,15 +98,15 @@
     {
       "atomType": "Input",
       "x": 0.0264,
-      "y": 0.352,
+      "y": 0.5,
       "uniqueID": "id-9536",
       "name": "Geometry",
       "type": "geometry"
     },
     {
       "atomType": "Code",
-      "x": 0.5199291408325952,
-      "y": 0.6067073170731707,
+      "x": 0.5124626121635095,
+      "y": 0.5609756097560976,
       "uniqueID": "id-9539",
       "ioValues": [
         {
@@ -119,8 +119,8 @@
         }
       ],
       "interpreterVersion": 1,
-      "code": "/**\n * Calculates the Euclidean distance between two geometry centers.\n */\nfunction run(\n  point1: Assembly | undefined = undefined,\n  point2: Assembly | undefined = undefined,\n): string {\n  if (!point1 || !point2) {\n    return \"Please connect two geometries to calculate distance\";\n  }\n  console.log(point1)\n  try {\n    // Get bounding boxes to find centers\n    const bbox1 = point1.geometry.boundingBox;\n    const bbox2 = point2.geometry.boundingBox;\n\n    if (!bbox1 || !bbox2) {\n      return \"Error: Could not get bounds from one or both geometries\";\n    }\n\n    const center1 = bbox1.center;\n    const center2 = bbox2.center;\n\n    // Calculate Euclidean distance\n    const dx = center2[0] - center1[0];\n    const dy = center2[1] - center1[1];\n    const dz = center2[2] - center1[2];\n    const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);\n\n    return `Distance: ${distance.toFixed(2)} mm`;\n  } catch (e) {\n    return `Error calculating distance: ${String(e)}`;\n  }\n}",
-      "compiledCode": "\"use strict\";\n/**\n * Calculates the Euclidean distance between two geometry centers.\n */\nfunction run(point1 = undefined, point2 = undefined) {\n    if (!point1 || !point2) {\n        return \"Please connect two geometries to calculate distance\";\n    }\n    console.log(point1);\n    try {\n        // Get bounding boxes to find centers\n        const bbox1 = point1.geometry.boundingBox;\n        const bbox2 = point2.geometry.boundingBox;\n        if (!bbox1 || !bbox2) {\n            return \"Error: Could not get bounds from one or both geometries\";\n        }\n        const center1 = bbox1.center;\n        const center2 = bbox2.center;\n        // Calculate Euclidean distance\n        const dx = center2[0] - center1[0];\n        const dy = center2[1] - center1[1];\n        const dz = center2[2] - center1[2];\n        const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);\n        return `Distance: ${distance.toFixed(2)} mm`;\n    }\n    catch (e) {\n        return `Error calculating distance: ${String(e)}`;\n    }\n}\n"
+      "code": "/**\n * Calculates the Euclidean distance between two geometry centers.\n */\nfunction run(\n  point1: Assembly | undefined = undefined,\n  point2: Assembly | undefined = undefined,\n): string {\n  console.log(point1)\n  if (!point1 || !point2) {\n    return \"Please connect two geometries to calculate distance\";\n  }\n  console.log(point1)\n  try {\n    // Get bounding boxes to find centers\n    const bbox1 = point1.geometry.boundingBox;\n    const bbox2 = point2.geometry.boundingBox;\n\n    if (!bbox1 || !bbox2) {\n      return \"Error: Could not get bounds from one or both geometries\";\n    }\n\n    const center1 = bbox1.center;\n    const center2 = bbox2.center;\n\n    // Calculate Euclidean distance\n    const dx = center2[0] - center1[0];\n    const dy = center2[1] - center1[1];\n    const dz = center2[2] - center1[2];\n    const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);\n    console.log(distance)\n    return `Distance: ${distance.toFixed(2)} mm`;\n  } catch (e) {\n    return `Error calculating distance: ${String(e)}`;\n  }\n}",
+      "compiledCode": "\"use strict\";\n/**\n * Calculates the Euclidean distance between two geometry centers.\n */\nfunction run(point1 = undefined, point2 = undefined) {\n    console.log(point1);\n    if (!point1 || !point2) {\n        return \"Please connect two geometries to calculate distance\";\n    }\n    console.log(point1);\n    try {\n        // Get bounding boxes to find centers\n        const bbox1 = point1.geometry.boundingBox;\n        const bbox2 = point2.geometry.boundingBox;\n        if (!bbox1 || !bbox2) {\n            return \"Error: Could not get bounds from one or both geometries\";\n        }\n        const center1 = bbox1.center;\n        const center2 = bbox2.center;\n        // Calculate Euclidean distance\n        const dx = center2[0] - center1[0];\n        const dy = center2[1] - center1[1];\n        const dz = center2[2] - center1[2];\n        const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);\n        console.log(distance);\n        return `Distance: ${distance.toFixed(2)} mm`;\n    }\n    catch (e) {\n        return `Error calculating distance: ${String(e)}`;\n    }\n}\n"
     },
     {
       "atomType": "Readme",
@@ -160,6 +160,265 @@
       ],
       "fontFamily": "ROBOTO",
       "selectedFontIndex": 0
+    },
+    {
+      "atomType": "GitHubMolecule",
+      "x": 0.22333000997008975,
+      "y": 0.5304878048780488,
+      "uniqueID": "id-9604",
+      "name": "Point",
+      "ioValues": [
+        {
+          "name": "X",
+          "ioValue": 10
+        },
+        {
+          "name": "Y",
+          "ioValue": 10
+        },
+        {
+          "name": "Z",
+          "ioValue": 10
+        }
+      ],
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Output",
+          "x": 0.98,
+          "y": 0.5,
+          "uniqueID": "id-9599",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
+          "atomType": "Input",
+          "x": 0.0264,
+          "y": 0.16,
+          "uniqueID": "id-9600",
+          "name": "X"
+        },
+        {
+          "atomType": "Input",
+          "x": 0.0264,
+          "y": 0.256,
+          "uniqueID": "id-9601",
+          "name": "Y"
+        },
+        {
+          "atomType": "Input",
+          "x": 0.0264,
+          "y": 0.352,
+          "uniqueID": "id-9602",
+          "name": "Z"
+        },
+        {
+          "atomType": "Code",
+          "x": 0.5235109717868338,
+          "y": 0.41566265060240964,
+          "uniqueID": "id-9603",
+          "ioValues": [
+            {
+              "name": "X",
+              "ioValue": 10
+            },
+            {
+              "name": "Y",
+              "ioValue": 10
+            },
+            {
+              "name": "Z",
+              "ioValue": 10
+            }
+          ],
+          "interpreterVersion": 0,
+          "code": "\n// Example Code\nconst Inputs = [\n  { inputName: \"X\", type: \"number\", defaultValue: 0 },\n  { inputName: \"Y\", type: \"number\", defaultValue: 0 },\n  { inputName: \"Z\", type: \"number\", defaultValue: 0 }\n];\n\nconsole.log([X,Y,Z])\nreturn [X,Y,Z];\n"
+        }
+      ],
+      "allConnectors": [
+        {
+          "ap2Name": "X",
+          "ap1ID": "id-9600",
+          "ap2ID": "id-9603"
+        },
+        {
+          "ap2Name": "Y",
+          "ap1ID": "id-9601",
+          "ap2ID": "id-9603"
+        },
+        {
+          "ap2Name": "Z",
+          "ap1ID": "id-9602",
+          "ap2ID": "id-9603"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-9603",
+          "ap2ID": "id-9599"
+        }
+      ],
+      "parentRepo": {
+        "lastFoundGit": "2026-05-20T10:23:39.104Z",
+        "privateRepo": false,
+        "repoName": "Point",
+        "dateCreated": "2026-03-12T15:02:09Z",
+        "likes": 0,
+        "readMe": "https://raw.githubusercontent.com/alzatin/Point/master/README.md?sanitize=true",
+        "yyyy": 2026,
+        "topMoleculeID": "id-282",
+        "githubMoleculesUsed": [],
+        "html_url": "https://github.com/alzatin/Point",
+        "topics": [
+          "abundance-tool"
+        ],
+        "parentRepo": null,
+        "forks": 1,
+        "dateModified": "739687",
+        "ranking": 0.2,
+        "searchField": "point alzatin returns a point as an array to use in other molecules [x,y,z] abundance-tool",
+        "owner": "alzatin",
+        "description": "Returns a point as an array to use in other molecules [x,y,z]",
+        "contentURL": "https://raw.githubusercontent.com/alzatin/Point/master/project.abundance?sanitize=true",
+        "svgURL": "https://raw.githubusercontent.com/alzatin/Point/master/project.svg?sanitize=true",
+        "isLocal": false
+      },
+      "unitsKey": "Unitless",
+      "fileTypeVersion": 1,
+      "lastReloadedFromGithubAt": 1779284703854
+    },
+    {
+      "atomType": "GitHubMolecule",
+      "x": 0.27916251246261214,
+      "y": 0.7469512195121951,
+      "uniqueID": "id-9619",
+      "name": "Point",
+      "ioValues": [
+        {
+          "name": "X",
+          "ioValue": 10
+        },
+        {
+          "name": "Y",
+          "ioValue": 10
+        },
+        {
+          "name": "Z",
+          "ioValue": 100,
+          "currentEquation": "100"
+        }
+      ],
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Output",
+          "x": 0.98,
+          "y": 0.5,
+          "uniqueID": "id-9620",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
+          "atomType": "Input",
+          "x": 0.0264,
+          "y": 0.16,
+          "uniqueID": "id-9621",
+          "name": "X"
+        },
+        {
+          "atomType": "Input",
+          "x": 0.0264,
+          "y": 0.256,
+          "uniqueID": "id-9622",
+          "name": "Y"
+        },
+        {
+          "atomType": "Input",
+          "x": 0.0264,
+          "y": 0.352,
+          "uniqueID": "id-9623",
+          "name": "Z"
+        },
+        {
+          "atomType": "Code",
+          "x": 0.5235109717868338,
+          "y": 0.41566265060240964,
+          "uniqueID": "id-9624",
+          "ioValues": [
+            {
+              "name": "X",
+              "ioValue": 10
+            },
+            {
+              "name": "Y",
+              "ioValue": 10
+            },
+            {
+              "name": "Z",
+              "ioValue": 100
+            }
+          ],
+          "interpreterVersion": 0,
+          "code": "\n// Example Code\nconst Inputs = [\n  { inputName: \"X\", type: \"number\", defaultValue: 0 },\n  { inputName: \"Y\", type: \"number\", defaultValue: 0 },\n  { inputName: \"Z\", type: \"number\", defaultValue: 0 }\n];\n\nconsole.log([X,Y,Z])\nreturn [X,Y,Z];\n"
+        }
+      ],
+      "allConnectors": [
+        {
+          "ap2Name": "X",
+          "ap1ID": "id-9621",
+          "ap2ID": "id-9624"
+        },
+        {
+          "ap2Name": "Y",
+          "ap1ID": "id-9622",
+          "ap2ID": "id-9624"
+        },
+        {
+          "ap2Name": "Z",
+          "ap1ID": "id-9623",
+          "ap2ID": "id-9624"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-9624",
+          "ap2ID": "id-9620"
+        }
+      ],
+      "parentRepo": {
+        "lastFoundGit": "2026-05-20T10:23:39.104Z",
+        "privateRepo": false,
+        "repoName": "Point",
+        "dateCreated": "2026-03-12T15:02:09Z",
+        "likes": 0,
+        "readMe": "https://raw.githubusercontent.com/alzatin/Point/master/README.md?sanitize=true",
+        "yyyy": 2026,
+        "topMoleculeID": "id-282",
+        "githubMoleculesUsed": [],
+        "html_url": "https://github.com/alzatin/Point",
+        "topics": [
+          "abundance-tool"
+        ],
+        "parentRepo": null,
+        "forks": 1,
+        "dateModified": "739687",
+        "ranking": 0.2,
+        "searchField": "point alzatin returns a point as an array to use in other molecules [x,y,z] abundance-tool",
+        "owner": "alzatin",
+        "description": "Returns a point as an array to use in other molecules [x,y,z]",
+        "contentURL": "https://raw.githubusercontent.com/alzatin/Point/master/project.abundance?sanitize=true",
+        "svgURL": "https://raw.githubusercontent.com/alzatin/Point/master/project.svg?sanitize=true",
+        "isLocal": false
+      },
+      "unitsKey": "Unitless",
+      "fileTypeVersion": 1,
+      "lastReloadedFromGithubAt": 1779284703854
     }
   ],
   "allConnectors": [
@@ -169,29 +428,29 @@
       "ap2ID": "id-9528"
     },
     {
-      "ap2Name": "point1",
-      "ap1ID": "id-9522",
-      "ap2ID": "id-9539"
-    },
-    {
       "ap2Name": "endPosition",
       "ap1ID": "id-9525",
       "ap2ID": "id-9528"
     },
     {
-      "ap2Name": "point2",
-      "ap1ID": "id-9525",
-      "ap2ID": "id-9539"
-    },
-    {
       "ap2Name": "geometry",
-      "ap1ID": "id-9536",
+      "ap1ID": "id-9539",
       "ap2ID": "id-9528"
     },
     {
       "ap2Name": "text",
       "ap1ID": "id-9560",
       "ap2ID": "id-9528"
+    },
+    {
+      "ap2Name": "point1",
+      "ap1ID": "id-9604",
+      "ap2ID": "id-9539"
+    },
+    {
+      "ap2Name": "point2",
+      "ap1ID": "id-9619",
+      "ap2ID": "id-9539"
     }
   ],
   "unitsKey": "Unitless",
