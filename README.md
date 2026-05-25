@@ -13,9 +13,5 @@
 
 
 
- Need code support for point to finish this project 
-
-__GEOMETRY_INPUT__
-
-
+ 
 
