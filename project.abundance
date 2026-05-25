@@ -78,7 +78,7 @@
         },
         {
           "name": "text",
-          "ioValue": "Distance: 30.00 mm",
+          "ioValue": "Dist: 30.00",
           "currentEquation": "label"
         },
         {
@@ -118,8 +118,8 @@
     },
     {
       "atomType": "Code",
-      "x": 0.35669362084456424,
-      "y": 0.5975609756097561,
+      "x": 0.35759209344115006,
+      "y": 0.6097560975609756,
       "uniqueID": "id-9539",
       "ioValues": [
         {
@@ -132,8 +132,8 @@
         }
       ],
       "interpreterVersion": 1,
-      "code": "/**\n * Calculates the Euclidean distance between two points.\n */\nfunction run(\n  point1: Assembly | undefined = undefined,\n  point2: Assembly | undefined = undefined,\n): string {\n  console.log(point1)\n  if (!point1 || !point2) {\n    return \"Please connect two points to calculate distance\";\n  }\n\n  try {\n    // Calculate Euclidean distance between two points\n    const dx = point2[0] - point1[0];\n    const dy = point2[1] - point1[1];\n    const dz = point2[2] - point1[2];\n    const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);\n    console.log(distance)\n    return `Distance: ${distance.toFixed(2)} mm`;\n  } catch (e) {\n    return `Error calculating distance: ${String(e)}`;\n  }\n}\n",
-      "compiledCode": "\"use strict\";\n/**\n * Calculates the Euclidean distance between two points.\n */\nfunction run(point1 = undefined, point2 = undefined) {\n    console.log(point1);\n    if (!point1 || !point2) {\n        return \"Please connect two points to calculate distance\";\n    }\n    try {\n        // Calculate Euclidean distance between two points\n        const dx = point2[0] - point1[0];\n        const dy = point2[1] - point1[1];\n        const dz = point2[2] - point1[2];\n        const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);\n        console.log(distance);\n        return `Distance: ${distance.toFixed(2)} mm`;\n    }\n    catch (e) {\n        return `Error calculating distance: ${String(e)}`;\n    }\n}\n"
+      "code": "/**\n * Calculates the Euclidean distance between two points.\n */\nfunction run(\n  point1: Assembly | undefined = undefined,\n  point2: Assembly | undefined = undefined,\n): string {\n  console.log(point1)\n  if (!point1 || !point2) {\n    return \"Please connect two points to calculate distance\";\n  }\n\n  try {\n    // Calculate Euclidean distance between two points\n    const dx = point2[0] - point1[0];\n    const dy = point2[1] - point1[1];\n    const dz = point2[2] - point1[2];\n    const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);\n    console.log(distance)\n    return `Dist: ${distance.toFixed(2)}`;\n  } catch (e) {\n    return `Error calculating distance: ${String(e)}`;\n  }\n}\n",
+      "compiledCode": "\"use strict\";\n/**\n * Calculates the Euclidean distance between two points.\n */\nfunction run(point1 = undefined, point2 = undefined) {\n    console.log(point1);\n    if (!point1 || !point2) {\n        return \"Please connect two points to calculate distance\";\n    }\n    try {\n        // Calculate Euclidean distance between two points\n        const dx = point2[0] - point1[0];\n        const dy = point2[1] - point1[1];\n        const dz = point2[2] - point1[2];\n        const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);\n        console.log(distance);\n        return `Dist: ${distance.toFixed(2)}`;\n    }\n    catch (e) {\n        return `Error calculating distance: ${String(e)}`;\n    }\n}\n"
     },
     {
       "atomType": "Readme",
@@ -201,6 +201,16 @@
       "ap2ID": "id-9539"
     },
     {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-9528",
+      "ap2ID": "id-9517"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-9536",
+      "ap2ID": "id-9528"
+    },
+    {
       "ap2Name": "text",
       "ap1ID": "id-9539",
       "ap2ID": "id-9528"
@@ -209,11 +219,6 @@
       "ap2Name": "geometry",
       "ap1ID": "id-9677",
       "ap2ID": "id-9680"
-    },
-    {
-      "ap2Name": "geometry",
-      "ap1ID": "id-9680",
-      "ap2ID": "id-9528"
     }
   ],
   "unitsKey": "Unitless",
