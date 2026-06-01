@@ -6,6 +6,22 @@
   "name": "Dimension_Label",
   "ioValues": [
     {
+      "name": "Starting_Point",
+      "ioValue": [
+        0,
+        0,
+        10
+      ]
+    },
+    {
+      "name": "Ending_Point_",
+      "ioValue": [
+        0,
+        0,
+        50
+      ]
+    },
+    {
       "name": "Geometry",
       "ioValue": "__GEOMETRY_INPUT__"
     }
@@ -27,7 +43,7 @@
     {
       "atomType": "Input",
       "x": 0.0264,
-      "y": 0.20731707317073172,
+      "y": 0.16,
       "uniqueID": "id-9522",
       "name": "Starting_Point",
       "type": "point3d",
@@ -40,7 +56,7 @@
     {
       "atomType": "Input",
       "x": 0.0264,
-      "y": 0.35060975609756095,
+      "y": 0.256,
       "uniqueID": "id-9525",
       "name": "Ending_Point_",
       "type": "point3d",
@@ -51,51 +67,17 @@
       ]
     },
     {
-      "atomType": "Label",
-      "x": 0.6373626373626374,
-      "y": 0.5152439024390244,
-      "uniqueID": "id-9528",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "text",
-          "ioValue": "Dist: NaN",
-          "currentEquation": "label"
-        },
-        {
-          "name": "startPosition",
-          "ioValue": [
-            25,
-            0,
-            0
-          ]
-        },
-        {
-          "name": "color",
-          "ioValue": "#3F3CDD",
-          "currentEquation": "#3F3CDD"
-        },
-        {
-          "name": "fontSize",
-          "ioValue": 40
-        }
-      ]
-    },
-    {
       "atomType": "Input",
       "x": 0.0264,
-      "y": 0.49390243902439024,
+      "y": 0.352,
       "uniqueID": "id-9536",
       "name": "Geometry",
       "type": "geometry"
     },
     {
       "atomType": "Code",
-      "x": 0.3032967032967033,
-      "y": 0.6920731707317074,
+      "x": 0.30319148936170215,
+      "y": 0.6890243902439024,
       "uniqueID": "id-9539",
       "ioValues": [
         {
@@ -138,6 +120,48 @@
           "ioValue": 10
         }
       ]
+    },
+    {
+      "atomType": "Label",
+      "x": 0.5510638297872341,
+      "y": 0.6097560975609756,
+      "uniqueID": "id-9705",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "text",
+          "ioValue": "Dist: 40.00",
+          "currentEquation": "label"
+        },
+        {
+          "name": "startPosition",
+          "ioValue": [
+            0,
+            0,
+            10
+          ]
+        },
+        {
+          "name": "endPosition",
+          "ioValue": [
+            0,
+            0,
+            50
+          ]
+        },
+        {
+          "name": "color",
+          "ioValue": "#3F3CDD",
+          "currentEquation": "#3F3CDD"
+        },
+        {
+          "name": "fontSize",
+          "ioValue": 40
+        }
+      ]
     }
   ],
   "allConnectors": [
@@ -147,9 +171,9 @@
       "ap2ID": "id-9539"
     },
     {
-      "ap2Name": "endPosition",
-      "ap1ID": "id-9525",
-      "ap2ID": "id-9528"
+      "ap2Name": "startPosition",
+      "ap1ID": "id-9522",
+      "ap2ID": "id-9705"
     },
     {
       "ap2Name": "point2",
@@ -157,24 +181,29 @@
       "ap2ID": "id-9539"
     },
     {
-      "ap2Name": "number or geometry",
-      "ap1ID": "id-9528",
-      "ap2ID": "id-9517"
-    },
-    {
-      "ap2Name": "geometry",
-      "ap1ID": "id-9536",
-      "ap2ID": "id-9528"
+      "ap2Name": "endPosition",
+      "ap1ID": "id-9525",
+      "ap2ID": "id-9705"
     },
     {
       "ap2Name": "text",
       "ap1ID": "id-9539",
-      "ap2ID": "id-9528"
+      "ap2ID": "id-9705"
     },
     {
       "ap2Name": "geometry",
       "ap1ID": "id-9677",
       "ap2ID": "id-9680"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-9680",
+      "ap2ID": "id-9705"
+    },
+    {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-9705",
+      "ap2ID": "id-9517"
     }
   ],
   "unitsKey": "Unitless",
