@@ -76,8 +76,8 @@
     },
     {
       "atomType": "Code",
-      "x": 0.3840579710144928,
-      "y": 0.6859756097560975,
+      "x": 0.37999999999999995,
+      "y": 0.6432926829268293,
       "uniqueID": "id-9539",
       "ioValues": [
         {
@@ -90,7 +90,7 @@
         }
       ],
       "interpreterVersion": 1,
-      "code": "/**\n * Calculates the Euclidean distance between two points.\n */\nfunction run(\n  point1: Assembly | undefined = undefined,\n  point2: Assembly | undefined = undefined,\n): string {\n  console.log(point1)\n  console.log(point2)\n  let newPoint1;\n  let newPoint2;\n  if (!point1 || !point2) { \n    return 'null'\n  }\n  if (typeof point1.isPoint === 'function' && point1.isPoint()){\n    console.log(point1.geometry.asTuple())\n    newPoint2 = point1.geometry.asTuple()\n    console.log(\"new\", newPoint1)\n  }else{\n    newPoint2= point2\n  }\n  if (typeof point2.isPoint === 'function' && point2.isPoint()){\n    console.log(point2.geometry.asTuple())\n    newPoint2 = point2.geometry.asTuple()\n    console.log(\"new\", newPoint2)\n  }else{\n    newPoint2= point2\n  }\n  \n\n  try {\n    console.log(\"point1\", point1)\n    console.log(\"point2\", point2)\n    // Calculate Euclidean distance between two points\n    const dx = point2[0] - point1[0];\n    const dy = point2[1] - point1[1];\n    const dz = point2[2] - point1[2];\n    const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);\n    console.log(distance)\n    return `Dist: ${distance.toFixed(2)}`;\n  } catch (e) {\n    return `Error calculating distance: ${String(e)}`;\n  }\n}\n",
+      "code": "/**\n * Calculates the Euclidean distance between two points.\n */\nfunction run(\n  point1: Assembly | undefined = undefined,\n  point2: Assembly | undefined = undefined,\n): string {\n  console.log(\"running \")\n  \n  let newPoint1;\n  let newPoint2;\n  if (!point1 || !point2) { \n    return 'null'\n  }\n  if (typeof point1.isPoint === 'function' && point1.isPoint()){\n    newPoint1 = point1.geometry.asTuple()\n    console.log(\"new1\", newPoint1)\n  }else{\n    newPoint1= point1\n  }\n  if (typeof point2.isPoint === 'function' && point2.isPoint()){\n    newPoint2 = point2.geometry.asTuple()\n    console.log(\"new2\", newPoint2)\n  }else{\n    newPoint2= point2\n  }\n  \n\n  try {\n    console.log(\"point1\", newPoint1)\n    console.log(\"point2\", newPoint2)\n    // Calculate Euclidean distance between two points\n    const dx = newPoint2[0] - newPoint1[0];\n    const dy = newPoint2[1] - newPoint1[1];\n    const dz = newPoint2[2] - newPoint1[2];\n    const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);\n    console.log(distance)\n    return `Dist: ${distance.toFixed(2)}`;\n  } catch (e) {\n    return `Error calculating distance: ${String(e)}`;\n  }\n}\n",
       "compiledCode": "\"use strict\";\n/**\n * Calculates the Euclidean distance between two points.\n */\nfunction run(point1 = undefined, point2 = undefined) {\n    console.log(point1);\n    console.log(point2);\n    if (!point1 || !point2) {\n        return 'null';\n    }\n    if (typeof point2.isPoint === 'function' && point2.isPoint()) {\n        console.log(point2.geometry.asTuple());\n        let newPoint2 = point2.geometry.asTuple();\n        console.log(\"new\", newPoint2);\n    }\n    try {\n        console.log(\"point1\", point1);\n        console.log(\"point2\", point2);\n        // Calculate Euclidean distance between two points\n        const dx = point2[0] - point1[0];\n        const dy = point2[1] - point1[1];\n        const dz = point2[2] - point1[2];\n        const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);\n        console.log(distance);\n        return `Dist: ${distance.toFixed(2)}`;\n    }\n    catch (e) {\n        return `Error calculating distance: ${String(e)}`;\n    }\n}\n"
     },
     {
@@ -123,7 +123,7 @@
     },
     {
       "atomType": "Label",
-      "x": 0.64,
+      "x": 0.643,
       "y": 0.5884146341463414,
       "uniqueID": "id-9705",
       "ioValues": [
@@ -204,14 +204,14 @@
     },
     {
       "atomType": "GitHubMolecule",
-      "x": 0.151,
-      "y": 0.7835365853658537,
+      "x": 0.157,
+      "y": 0.7957317073170732,
       "uniqueID": "id-9740",
       "name": "Point",
       "ioValues": [
         {
           "name": "X",
-          "ioValue": 21
+          "ioValue": 19
         },
         {
           "name": "Y",
@@ -265,7 +265,7 @@
           "ioValues": [
             {
               "name": "x",
-              "ioValue": 21
+              "ioValue": 19
             },
             {
               "name": "y",
