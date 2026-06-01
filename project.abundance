@@ -76,8 +76,8 @@
     },
     {
       "atomType": "Code",
-      "x": 0.30319148936170215,
-      "y": 0.6890243902439024,
+      "x": 0.37553191489361704,
+      "y": 0.7286585365853658,
       "uniqueID": "id-9539",
       "ioValues": [
         {
@@ -133,7 +133,7 @@
         },
         {
           "name": "text",
-          "ioValue": "Dist: 40.00",
+          "ioValue": "Dist: NaN",
           "currentEquation": "label"
         },
         {
@@ -165,8 +165,8 @@
     },
     {
       "atomType": "GitHubMolecule",
-      "x": 0.12659574468085105,
-      "y": 0.8353658536585366,
+      "x": 0.13085106382978723,
+      "y": 0.8384146341463415,
       "uniqueID": "id-9740",
       "name": "Point",
       "ioValues": [
@@ -311,11 +311,6 @@
       "ap2ID": "id-9705"
     },
     {
-      "ap2Name": "point2",
-      "ap1ID": "id-9525",
-      "ap2ID": "id-9539"
-    },
-    {
       "ap2Name": "text",
       "ap1ID": "id-9539",
       "ap2ID": "id-9705"
@@ -334,6 +329,11 @@
       "ap2Name": "number or geometry",
       "ap1ID": "id-9705",
       "ap2ID": "id-9517"
+    },
+    {
+      "ap2Name": "point2",
+      "ap1ID": "id-9740",
+      "ap2ID": "id-9539"
     }
   ],
   "unitsKey": "Unitless",
